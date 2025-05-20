@@ -1,26 +1,89 @@
-#Machine Learning Model Comparison for Text Classification
+# 🧠 NLP Pipeline: Text Classification, Summarization, and Clustering
 
-##Usage
-Prepare your datasets (data.csv and validation_data.csv).
-Run the notebook to preprocess the data, train the models, and evaluate their performance. You can run the entire pipeline or use specific sections as needed.
-The results will be displayed for each model, including accuracy, precision, recall, and F1 score.
-The predictions for the validation data will be saved as validation_data_predicted.csv.
+This project explores three fundamental tasks in Natural Language Processing (NLP): **Text Classification**, **Text Summarization**, and **Text Clustering**. Each component is implemented using state-of-the-art models and libraries such as Hugging Face Transformers and Scikit-learn.
 
-##Technologies
-Python 3.x
-Pandas for data manipulation
-scikit-learn for machine learning models and evaluation
+---
 
-##Project Structure
-data.csv: Input dataset for training.
-validation_data.csv: Input dataset for validation.
-validation_data_predicted.csv: Output file containing the validation data with predicted labels.
-model_comparison.ipynb: Jupyter notebook containing the code for training and evaluating the models.
+## 📁 Project Structure
 
-##Results
-The following models were trained and evaluated:
-Naive Bayes: Achieved an accuracy of 91.7%.
-Logistic Regression: Achieved an accuracy of 98.6%.
-Random Forest: Achieved an accuracy of 99.7%.
-You can compare the performance of these models based on metrics like accuracy, precision, recall, and F1 score.
+project/
+├── classification TRUE.ipynb # Text Classification using Transformers
+├── NLP(summrazition).ipynb # Summarization using BART
+├── Clustring.ipynb # Clustering for Topic Discovery
+├── requirements.txt # Project dependencies
 
+---
+
+## 🔹 1. Text Classification
+
+**File:** `classification TRUE.ipynb`
+
+- Uses a pre-trained BERT-like transformer from Hugging Face.
+- Loads and preprocesses product reviews with associated ratings.
+- Trains and evaluates a classification model for sentiment or category prediction.
+
+**🔧 Input:**  
+Customer reviews + ratings  
+**🎯 Output:**  
+Predicted sentiment or product category  
+
+**✅ Features:**  
+- Data cleaning and preprocessing  
+- Tokenization using `AutoTokenizer`  
+- Model training with evaluation metrics (Accuracy, Precision, Recall, F1)  
+
+---
+
+## 🔹 2. Text Summarization
+
+**File:** `NLP(summrazition).ipynb`
+
+- Applies extractive and abstractive summarization on review data.
+- Filters reviews by product category and summarizes using the `facebook/bart-large-cnn` model.
+
+**🔧 Input:**  
+Raw review text  
+**🎯 Output:**  
+Concise summary of reviews  
+
+**✅ Features:**  
+- Summarization using Hugging Face pipelines  
+- Easy filtering and customization by product/category  
+
+---
+
+## 🔹 3. Clustering & Topic Discovery
+
+**File:** `Clustring.ipynb`
+
+- Applies vectorization (TF-IDF or embeddings) to convert text into numerical features.
+- Performs clustering using **KMeans** or **Hierarchical Clustering**.
+- Visualizes results and evaluates clustering using Silhouette Score.
+
+**🔧 Input:**  
+Unlabeled textual data  
+**🎯 Output:**  
+Groups of similar topics or clusters  
+
+**✅ Features:**  
+- Dimensionality reduction with PCA (optional)  
+- Visual representation of clusters  
+- Insights into hidden topics in datasets  
+
+---
+
+## 🛠️ Requirements
+
+Install the necessary dependencies using:
+
+```bash
+pip install -r requirements.txt
+Required Libraries:
+transformers
+scikit-learn
+pandas
+matplotlib
+seaborn
+scipy
+gradio
+jupyter
